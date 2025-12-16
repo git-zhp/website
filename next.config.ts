@@ -5,10 +5,6 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
-  i18n: {
-    locales: ["en", "zh"],
-    defaultLocale: "en",
-  },
   experimental: {
     optimizePackageImports: ["react", "react-dom"],
   },
