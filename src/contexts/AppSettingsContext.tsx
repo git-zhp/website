@@ -44,24 +44,9 @@ function getInitialTheme(): Theme {
   return "light";
 }
 
-function getInitialLanguage(): Locale {
-  if (typeof window === "undefined") {
-    return "en";
-  }
-
-  const stored = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
-  if (stored === "en" || stored === "zh") {
-    return stored;
-  }
-
-  return "en";
-}
-
 export function AppSettingsProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme>(() => getInitialTheme());
-  const [language, setLanguageState] = useState<Locale>(() =>
-    getInitialLanguage(),
-  );
+  const [language, setLanguageState] = useState<Locale>("en");
 
   useEffect(() => {
     if (typeof document === "undefined") {
@@ -71,6 +56,17 @@ export function AppSettingsProvider({ children }: { children: ReactNode }) {
     document.documentElement.dataset.theme = theme;
     window.localStorage.setItem(THEME_STORAGE_KEY, theme);
   }, [theme]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const stored = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    if (stored === "en" || stored === "zh") {
+      setLanguageState(stored);
+    }
+  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined") {
