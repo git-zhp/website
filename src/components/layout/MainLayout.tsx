@@ -58,7 +58,7 @@ export function MainLayout({ children }: { children: ReactNode }) {
                       : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
                   }`}
                 >
-                  <span>{t(item.labelKey)}</span>
+                  <span suppressHydrationWarning>{t(item.labelKey)}</span>
                 </Link>
               );
             })}
