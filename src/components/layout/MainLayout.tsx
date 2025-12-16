@@ -30,14 +30,14 @@ export function MainLayout({ children }: { children: ReactNode }) {
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3">
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-sm font-semibold text-primary-foreground shadow-sm">
-              EW
+              企
             </div>
             <div className="flex flex-col">
               <span className="text-sm font-semibold leading-none tracking-tight">
-                Enterprise Website
+                企业官网
               </span>
               <span className="text-xs text-muted-foreground">
-                Next.js Starter Framework
+                Enterprise Website
               </span>
             </div>
           </div>
