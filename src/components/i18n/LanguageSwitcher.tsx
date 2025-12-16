@@ -11,7 +11,7 @@ export function LanguageSwitcher() {
   const { language, setLanguage } = useAppSettings();
 
   return (
-    <div className="inline-flex items-center gap-1 rounded-full bg-neutral-100 p-1 text-xs text-neutral-700">
+    <div className="inline-flex items-center gap-1 rounded-md border border-input p-1">
       {languages.map((item) => {
         const isActive = language === item.code;
 
@@ -20,10 +20,10 @@ export function LanguageSwitcher() {
             key={item.code}
             type="button"
             onClick={() => setLanguage(item.code)}
-            className={`rounded-full px-2 py-0.5 transition-colors ${
+            className={`rounded-sm px-2.5 py-1 text-xs font-medium transition-colors ${
               isActive
-                ? "bg-neutral-900 text-neutral-50"
-                : "text-neutral-700 hover:bg-neutral-200"
+                ? "bg-secondary text-secondary-foreground shadow-sm"
+                : "text-muted-foreground hover:bg-muted hover:text-foreground"
             }`}
           >
             {item.label}

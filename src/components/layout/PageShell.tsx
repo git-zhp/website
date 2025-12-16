@@ -13,16 +13,16 @@ export function PageShell({ titleKey, children }: PageShellProps) {
   const { t } = useTranslation();
 
   return (
-    <div className="flex flex-1 flex-col gap-6 py-6">
-      <div>
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+    <div className="flex flex-1 flex-col gap-8 py-8 md:py-10">
+      <div className="space-y-2 border-b border-border pb-8">
+        <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
           {t(titleKey)}
         </h1>
-        <p className="mt-2 max-w-2xl text-sm text-neutral-500 sm:text-base">
+        <p className="max-w-2xl text-lg text-muted-foreground">
           {t("layout.page.subtitle")}
         </p>
       </div>
-      <div className="flex flex-1 flex-col rounded-2xl border border-dashed border-neutral-200 bg-white/60 p-6 shadow-sm">
+      <div className="flex flex-1 flex-col">
         {children}
       </div>
     </div>

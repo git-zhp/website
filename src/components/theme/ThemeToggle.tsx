@@ -1,6 +1,7 @@
 "use client";
 
 import { useAppSettings } from "@/contexts/AppSettingsContext";
+import { Button } from "@/components/ui/Button";
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useAppSettings();
@@ -8,14 +9,14 @@ export function ThemeToggle() {
   const isDark = theme === "dark";
 
   return (
-    <button
-      type="button"
+    <Button
+      variant="ghost"
       onClick={toggleTheme}
       aria-label="Toggle theme"
-      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 bg-white text-xs text-neutral-700 shadow-sm transition-colors hover:bg-neutral-100"
+      className="h-9 w-9 rounded-md px-0"
     >
-      {isDark ? "☾" : "☀︎"}
-    </button>
+      <span className="text-lg leading-none">{isDark ? "☾" : "☀︎"}</span>
+    </Button>
   );
 }
 

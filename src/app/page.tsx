@@ -16,24 +16,24 @@ export const dynamic = "force-static";
 export default function HomePage() {
   return (
     <PageShell titleKey="page.home.title">
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
-        <div className="space-y-4">
-          <Card>
-            <div className="flex flex-col gap-4 md:flex-row md:items-center">
-              <div className="flex-1 space-y-3">
-                <h2 className="text-xl font-semibold text-neutral-900">
+      <div className="grid gap-6 lg:grid-cols-[1.5fr_1fr]">
+        <div className="space-y-6">
+          <Card className="bg-gradient-to-br from-card to-secondary/50">
+            <div className="flex flex-col gap-6 md:flex-row md:items-center">
+              <div className="flex-1 space-y-4">
+                <h2 className="text-2xl font-bold tracking-tight text-foreground">
                   Modern enterprise-ready layout
                 </h2>
-                <p className="text-sm text-neutral-600">
+                <p className="text-muted-foreground">
                   Use this starter as the foundation for marketing, product, or
                   documentation experiences with consistent design and behavior.
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-3">
                   <Button variant="primary">Primary action</Button>
                   <Button variant="secondary">Secondary action</Button>
                 </div>
               </div>
-              <div className="hidden w-full max-w-[180px] shrink-0 md:block">
+              <div className="hidden w-full max-w-[200px] shrink-0 md:block">
                 <AppImage
                   src="/window.svg"
                   alt="Layout illustration"
@@ -41,13 +41,14 @@ export default function HomePage() {
                   height={200}
                   radius="lg"
                   priority
+                  className="shadow-lg"
                 />
               </div>
             </div>
           </Card>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-3">
             <Card title="Responsive" description="Optimized for desktop and mobile.">
-              <p className="text-xs text-neutral-600">
+              <p className="text-sm text-muted-foreground">
                 Layout primitives are built with Tailwind CSS and flexbox for
                 predictable behavior across breakpoints.
               </p>
@@ -56,7 +57,7 @@ export default function HomePage() {
               title="International"
               description="Ready for multilingual experiences."
             >
-              <p className="text-xs text-neutral-600">
+              <p className="text-sm text-muted-foreground">
                 Switch language at the top-right to see how navigation and
                 titles adapt.
               </p>
@@ -65,14 +66,14 @@ export default function HomePage() {
               title="Theme-aware"
               description="Built-in light and dark modes."
             >
-              <p className="text-xs text-neutral-600">
+              <p className="text-sm text-muted-foreground">
                 Use the theme toggle to preview color tokens and typography
                 across the site.
               </p>
             </Card>
           </div>
         </div>
-        <div className="space-y-4">
+        <div className="space-y-6">
           <AnalyticsPanel />
         </div>
       </div>
